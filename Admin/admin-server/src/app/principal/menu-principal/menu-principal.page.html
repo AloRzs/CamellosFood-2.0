@@ -3,27 +3,33 @@
     <ion-buttons slot="start">
           <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">Menú principal</ion-title>
+    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">CAMELLO’S Repartidor</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
+<ion-content [fullscreen]="true" class="background-image">
   <ion-header collapse="condense">
-
     <ion-toolbar>
-      <ion-title size="large">Menú principal</ion-title>
+      <ion-title size="large">CAMELLO’S Repartidor</ion-title>
     </ion-toolbar>
-
   </ion-header>
 
 
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-button shape="round" color="danger" class="custom-button" style="margin-left: -50px;">
+      <p>Iniciar sistema</p>
+    </ion-button>
+  </ion-fab>
+  
+  
+  
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title style="text-align:center"> ● Estás desconectado </ion-title>
+    <ion-title style="text-align:center"> ● En línea </ion-title>
   </ion-toolbar>
 </ion-footer>
 

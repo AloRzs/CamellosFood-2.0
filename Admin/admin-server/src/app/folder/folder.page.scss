@@ -32,8 +32,11 @@ ion-menu-button {
   font-size: 30px; /* Centrado papu */
 }
 
-// .fondo-imagen{ dejare esto pa despues
-//     background-image: url('./assets/img/map_background.png');
-//     background-size: cover; /* Escala la imagen para cubrir todo el elemento */
-//     background-repeat: no-repeat; /* Evita la repetición de la imagen */
-// }
+/* Fondo temporal de la vista principal */
+
+.background-image {
+  --background: url('../assets/img/map_background2.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+

@@ -3,9 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
     path: 'folder/:id',
@@ -14,6 +12,10 @@ const routes: Routes = [
   {
     path: 'menu-principal',
     loadChildren: () => import('./principal/menu-principal/menu-principal.module').then( m => m.MenuPrincipalPageModule)
+  },
+  {
+    path: 'iniciar-sesion',
+    loadChildren: () => import('./principal/iniciar-sesion/iniciar-sesion.module').then( m => m.IniciarSesionPageModule)
   }
 ];
 

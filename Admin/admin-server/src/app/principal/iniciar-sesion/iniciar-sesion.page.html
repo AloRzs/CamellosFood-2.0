@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="height: 75px; display: flex; align-items: center;">
+    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  menu="false">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">iniciar-sesion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input label="Ingrese su RUT"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Ingrese su contraseña" type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Mostrar contraseña</ion-label>
+      <ion-checkbox [(ngModel)]="showPassword" (ionChange)="togglePasswordVisibility()"></ion-checkbox>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-list>
+
+    <ion-button size="default">Iniciar sesión</ion-button>
+    
+    <p>Olvidé la contraseña</p>
+
+    <p>Regresar atrás</p>
+    
+    
+
+  </ion-list>
+
+  
+
+</ion-content>
