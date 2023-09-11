@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  var = 0;
+  // var = 0;
   public appPages = [
     { title: 'Menu-principal', url: '/menu-principal', icon: 'grid' },
     { title: 'Iniciar-sesión', url: '/iniciar-sesion', icon: 'person' },
