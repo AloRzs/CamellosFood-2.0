@@ -1,0 +1,7 @@
+{
+  "name": "admin-server",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
