@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="height: 75px; display: flex; align-items: center;">
+    <ion-buttons slot="start">
+          <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">INICIAR SERVICIO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">form_iniciar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item lines="none">
+
+    <p class="info-text">
+      Antes de empezar
+      confirme las siguientes opciones:
+    </p>
+
+  </ion-item>
+
+  <ion-list class="ion-text-center">
+
+    <ion-item lines="none">
+      <ion-checkbox [(ngModel)]="checkbox1">Verificar estado del vehículo</ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-checkbox [(ngModel)]="checkbox2">Estoy usando ropa adecuada</ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-checkbox [(ngModel)]="checkbox3" style="font-size: small;">llevo bolsa térmica para los productos</ion-checkbox>
+    </ion-item>
+    <ion-button class="button-margin" (click)="submitButtonClicked()" [disabled]="!allCheckboxesChecked" routerLink="/menu-repa">Enviar</ion-button>
+  
+  </ion-list>
+  
+
+</ion-content>

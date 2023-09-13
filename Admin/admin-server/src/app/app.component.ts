@@ -5,10 +5,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  // var = 0;
+  
   public appPages = [
-    { title: 'Menu-principal', url: '/menu-principal', icon: 'grid' },
+    { title: 'Menu-principal', url: '/folder/inbox', icon: 'grid' },
     { title: 'Iniciar-sesión', url: '/iniciar-sesion', icon: 'person' },
+    { title: 'Fake_menu', url: '/menu-principal', icon: 'skull' },
   ];
   constructor() {}
 }
