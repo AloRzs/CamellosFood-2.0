@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   public appPages = [
-    { title: 'Menu-principal', url: '/folder/inbox', icon: 'grid' },
-    { title: 'Iniciar-sesión', url: '/iniciar-sesion', icon: 'person' },
-    { title: 'Fake_menu', url: '/menu-principal', icon: 'skull' },
+    { title: 'Menu Principal', url: '/folder/inbox', icon: 'grid' },
+    { title: 'Iniciar Sesión', url: '/iniciar-sesion', icon: 'person' },
+    { title: 'Repartidor', url: '/menu-repa', icon: 'cube' },
+    
   ];
   constructor() {}
 }

@@ -32,7 +32,16 @@ const routes: Routes = [
   {
     path: 'menu-repa',
     loadChildren: () => import('./principal/sistema/menu-repa/menu-repa.module').then( m => m.MenuRepaPageModule)
-  }
+  },
+  {
+    path: 'mi-perfil',
+    loadChildren: () => import('./principal/sistema/cuenta/mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule)
+  },
+  {
+    path: 'lista-pedidos',
+    loadChildren: () => import('./principal/sistema/pedidos/lista-pedidos/lista-pedidos.module').then( m => m.ListaPedidosPageModule)
+  },
+  
 ];
 
 @NgModule({

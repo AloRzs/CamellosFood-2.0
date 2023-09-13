@@ -16,14 +16,14 @@
 
     <ion-item>
       <ion-label position="floating">Ingrese su RUT</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="rut" (ngModelChange)="formatRut($event)"></ion-input>
     </ion-item>
-  
+    
     <ion-item>
       <ion-label position="floating">Ingrese su contraseña</ion-label>
-      <ion-input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password"></ion-input>
+      <ion-input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" required></ion-input>
     </ion-item>
-  
+    
     <ion-item>
       <ion-label>Mostrar contraseña</ion-label>
       <ion-checkbox [(ngModel)]="showPassword" (ionChange)="togglePasswordVisibility()"></ion-checkbox>
@@ -34,11 +34,13 @@
 
   <ion-list class="ion-text-center">
 
-    <ion-button size="default" routerLink="/menu-principal" class="button-margin">Iniciar sesión</ion-button>
+    <ion-button size="default" (click)="iniciarSesion()" class="button-margin">Iniciar sesión</ion-button>
 
     <p class="centered-text recovery_pass" routerLink="/recuperar-password">Olvidé la contraseña</p>
 
     <p class="centered-text exit_pass" routerLink="/folder/inbox">Regresar</p>
+
+
   
   </ion-list>
   
