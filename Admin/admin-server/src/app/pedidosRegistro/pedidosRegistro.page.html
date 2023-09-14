@@ -1,0 +1,60 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar >
+    <ion-icon name="power" aria-label="Cerrar Sesión" slot="end" style="color: white;"></ion-icon>
+    <ion-title style="font-family: BebasNeue;font-size: 50px;color: white;">
+      Camello's Food
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-grid style="border: 1px solid rgba(190, 190, 190,0.2);border-radius: 10px;"> <!-- un ngFor por cada pedido realizado -->
+        <!-- item -->
+        <ion-row *ngFor="let registro of listaRegistrosVenta;let i = index" [routerLink]="['detalle/',registro.id]" style="border:2px solid rgb(122, 122, 122);border-radius: 10px;margin-bottom: 15px;">
+          <!-- id -->
+          <ion-col>
+            <ion-text style="font-family: BebasNeue;font-size: 30px;">{{registro.id}}</ion-text>
+          </ion-col>
+          <!-- Datos extras-->
+          <ion-col>
+            <ion-grid>
+              <ion-row>
+                <ion-icon name="person"style="opacity: 30%;"></ion-icon>
+                <ion-text>{{registro.nombreUsuario}}</ion-text>
+              </ion-row>
+              
+              <ion-row><ion-icon name="calendar"style="opacity: 30%;"></ion-icon><ion-text>{{registro.fechaEmision}}</ion-text></ion-row>
+              
+              <ion-row><ion-icon name="cash" style="opacity: 30%;"></ion-icon><ion-text>{{registro.montoPagado}}</ion-text></ion-row>
+              
+            </ion-grid>
+          </ion-col>
+          <!-- estado -->
+          <ion-col offset="2">
+            <ion-grid>
+              <!-- ícono estado -->
+              <ion-row *ngIf="registro.estado==='Entregado'">
+                <ion-icon name="checkmark-circle-outline" style="font-size: 50px;color: rgb(90, 185, 90);"></ion-icon>
+              </ion-row>
+              <ion-row *ngIf="registro.estado==='En proceso'">
+                <ion-icon name="warning-outline" style="font-size: 50px;color: rgb(255, 225, 128)"></ion-icon>
+              </ion-row>
+              <!-- Descripción estado-->
+              <ion-row *ngIf="registro.estado==='Entregado'">
+                <ion-text style="color: rgb(90, 185, 90);font-family: RobotoRegular;font-weight: bold;">{{registro.estado}}</ion-text>
+              </ion-row>
+              <ion-row *ngIf="registro.estado==='En proceso'">
+                <ion-text style="color: rgb(255, 225, 128);font-family: RobotoRegular;font-weight: bold;">{{registro.estado}}</ion-text>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  
+
+  <app-explore-container name=""></app-explore-container>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div style="display: flex;flex-direction: row;align-items: center;">
+      <ion-back-button defaultHref="/" style="--color:white;"></ion-back-button>
+    <ion-title style="font-family: BebasNeue;font-size: 35px;color: white;">Listado de Productos</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Listado de Productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- necesito realizar lista de las cosas unu-->
+  <ion-card *ngFor="let producto of productos;">
+    <div *ngIf="producto.estado ===true">
+      <ion-card-header>
+        <ion-card-title>
+          <div style="display: flex;justify-content: start;">
+            <ion-text># {{producto.id}}</ion-text>
+          </div>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div style="margin-bottom: 15px;" class="desc-prod">
+          <ion-text style="font-family: RobotoRegular;">{{producto.descripcion}}</ion-text>
+        </div>
+        <ion-buttons class="ion-justify-content-around">
+          <ion-button class="botones-productos-crud" (click)="deshabilitarProducto(producto.id,producto)">Deshabilitar</ion-button>
+          <ion-button class="botones-productos-crud" [routerLink]="['productos-modificar/',producto.id]">Modificar</ion-button>
+        </ion-buttons>
+      </ion-card-content>
+    </div>
+    <div *ngIf="producto.estado === false ">
+      <ion-card-header >
+        <ion-card-title>
+          <div style="display: flex;justify-content: start;">
+            <ion-text># {{producto.id}}</ion-text>
+          </div>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div style="margin-bottom: 15px;" class="desc-prod">
+          <ion-text style="font-family: RobotoRegular;">{{producto.descripcion}}</ion-text>
+        </div>
+        <ion-buttons class="ion-justify-content-around">
+          <ion-button class="botones-productos-crud" (click)="habilitarProducto(producto.id,producto)">Habilitar</ion-button>
+          <ion-button class="botones-productos-crud" disabled>Modificar</ion-button>
+        </ion-buttons>
+      </ion-card-content>
+    </div>
+  </ion-card>
+  <!-- "id": "CR04",
+  "nombre": "Empanadas Queso-Camarón",
+  "descripcion": "Empanadas de Queso-Camarón (vienen 3 unidades por 1 cantidad)",
+  "precio": 4500 -->
+</ion-content>

@@ -1,0 +1,62 @@
+{
+  "productos": [
+    {
+      "id": "CR01",
+      "nombre": "Papas Bravas",
+      "descripcion": "Papas fritas con salsa ranchera y tocino picado",
+      "precio": 2400,
+      "estado": true
+    },
+    {
+      "id": "CR02",
+      "nombre": "Hamburguesa Cheddar",
+      "descripcion": "Hamburguesa clásica con queso cheddar y salsa BBQ",
+      "precio": 4500,
+      "estado": true
+    },
+    {
+      "id": "CR03",
+      "nombre": "Bebida Coca-Cola 3L",
+      "descripcion": "Bebida Coca-Cola en formato de 3 litros",
+      "precio": 4500,
+      "estado": true
+    },
+    {
+      "id": "CR04",
+      "nombre": "Empanadas Queso-Camarón",
+      "descripcion": "Empanadas de Queso-Camarón (vienen 3 unidades por 1 cantidad)",
+      "precio": 4500,
+      "estado": true
+    }
+  ],
+  "registroVentas": [
+    {
+      "id": "001",
+      "nombreUsuario": "Juan Causa",
+      "fechaEmision": "11/09/23",
+      "montoPagado": 13000,
+      "estado": "Entregado"
+    },
+    {
+      "id": "018",
+      "nombreUsuario": "Carlos Jara",
+      "fechaEmision": "02/09/23",
+      "montoPagado": 4000,
+      "estado": "Entregado"
+    },
+    {
+      "id": "004",
+      "nombreUsuario": "Benito Benavides",
+      "fechaEmision": "23/08/23",
+      "montoPagado": 13000,
+      "estado": "Entregado"
+    },
+    {
+      "id": "023",
+      "nombreUsuario": "Manuel Montes",
+      "fechaEmision": "32/07/23",
+      "montoPagado": 60000,
+      "estado": "En proceso"
+    }
+  ]
+}

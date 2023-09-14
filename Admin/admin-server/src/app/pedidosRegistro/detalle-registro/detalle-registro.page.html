@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-back-button defaultHref="/pedidos-registro" style="--color:white;"></ion-back-button>
+        </ion-col>
+        <ion-col size="8">
+          <ion-title style="color: white;font-family: BebasNeue;font-size: 30px;"><h1>Detalle</h1></ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-title style="font-family: BebasNeue; font-size: 35px;">ID: {{regis.id}}</ion-card-title>
+    <!-- Contenido de la card -->
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label style="font-weight: bolder; color: black;">Nombre de Usuario:</ion-label>
+            <ion-text>{{regis.nombreUsuario}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label style="font-weight: bolder; color: black;">Fecha de Emisión:</ion-label>
+      <ion-text>{{regis.fechaEmision}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label style="font-weight: bolder; color: black;">Monto Pagado:</ion-label>
+            <ion-text>{{regis.montoPagado}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label style="font-weight: bolder; color: black;">Estado:</ion-label>
+            <ion-text>{{regis.estado}}</ion-text>
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+      <!-- Atributos del registro -->
+      
+      
+      
+      
+      
+      
+      
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>
