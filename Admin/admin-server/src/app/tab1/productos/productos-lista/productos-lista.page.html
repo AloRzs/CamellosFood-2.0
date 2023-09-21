@@ -13,15 +13,19 @@
       <ion-title size="large">Listado de Productos</ion-title>
     </ion-toolbar>
   </ion-header>
-  <!-- necesito realizar lista de las cosas unu-->
+  <ion-button expand="block" style="padding: 12px;--background: var(--camello-primary);" [routerLink]="['../productos-agregar']"><ion-icon name="add"></ion-icon></ion-button>
+  <!-- necesito realizar lista de las cosas-->
   <ion-card *ngFor="let producto of productos;">
-    <div *ngIf="producto.estado ===true">
+    <div *ngIf="producto.estado === true">
       <ion-card-header>
         <ion-card-title>
           <div style="display: flex;justify-content: start;">
             <ion-text># {{producto.id}}</ion-text>
           </div>
-          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text><br>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.categoria?.nombre}}</ion-text>
+          <!-- con el código de abajo recupero algo específico de una sublista (no la entiendo muy bien) -->
+          <!-- <ion-text style="font-family: BebasNeue;font-size: 25px;">{{producto.categoria[0]?.nombre}}</ion-text> -->
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
@@ -40,7 +44,9 @@
           <div style="display: flex;justify-content: start;">
             <ion-text># {{producto.id}}</ion-text>
           </div>
-          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text><br>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.categoria.nombre}}</ion-text>
+          <!-- <ion-text style="font-family: BebasNeue;font-size: 25px;">{{producto.categoria[0]?.nombre}}</ion-text> -->
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
@@ -55,7 +61,7 @@
     </div>
   </ion-card>
   <!-- "id": "CR04",
-  "nombre": "Empanadas Queso-Camarón",
-  "descripcion": "Empanadas de Queso-Camarón (vienen 3 unidades por 1 cantidad)",
-  "precio": 4500 -->
+        "nombre": "Empanadas Queso-Camarón",
+        "descripcion": "Empanadas de Queso-Camarón (vienen 3 unidades por 1 cantidad)",
+        "precio": 4500 -->
 </ion-content>

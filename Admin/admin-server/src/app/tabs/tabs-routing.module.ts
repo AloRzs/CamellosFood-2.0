@@ -18,8 +18,12 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'login',
+    loadChildren: () => import('../login/login.module').then(m => m.LoginPageModule)
+  },
+  {
     path: '',
-    redirectTo: '/tabs/productos-registro',
+    redirectTo: 'login',
     pathMatch: 'full'
   }
 ];

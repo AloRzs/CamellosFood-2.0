@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Producto } from '../clases/Producto';
 
 
@@ -29,10 +30,25 @@ export class ProductosService {
   }
   updateEstadoProductoHab(productoId: string,producto: any): Observable<any> {
     const url = `${this.apiUrlProd}/${productoId}`;
+    //manera de creerse el cuento pa crear una url  (no se usar)
     const productoActualizado = {...producto,estado:true}
     return this.servicioHttp.put(url, productoActualizado);
   }
-
+  putProducto(id:number,producto:Producto):Observable<Producto>{
+    //para actualizar se le pasa la id del producto y ademas se le pasa el producto de por si
+    return this.servicioHttp.put<Producto>(this.apiUrlProd + "/" + id,producto)
   }
+
+  delProducto(id:string):Observable<Producto>{
+
+    return this.servicioHttp.delete<Producto>(this.apiUrlProd+"/"+id)  
+  }
+  
+  postProducto(producto:Producto):Observable<Producto>{
+
+    return this.servicioHttp.post<Producto>(this.apiUrlProd,producto)
+  }
+
+}
 
 

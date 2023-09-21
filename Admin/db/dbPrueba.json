@@ -5,28 +5,62 @@
       "nombre": "Papas Bravas",
       "descripcion": "Papas fritas con salsa ranchera y tocino picado",
       "precio": 2400,
-      "estado": true
+      "estado": true,
+      "categoria": {
+        "id": "C1",
+        "nombre": "Comida Rápida"
+      }
     },
     {
       "id": "CR02",
       "nombre": "Hamburguesa Cheddar",
       "descripcion": "Hamburguesa clásica con queso cheddar y salsa BBQ",
       "precio": 4500,
-      "estado": true
+      "estado": true,
+      "categoria": {
+        "id": "C1",
+        "nombre": "Comida Rápida"
+      }
     },
     {
       "id": "CR03",
       "nombre": "Bebida Coca-Cola 3L",
       "descripcion": "Bebida Coca-Cola en formato de 3 litros",
       "precio": 4500,
-      "estado": true
+      "estado": true,
+      "categoria": {
+        "id": "C3",
+        "nombre": "Bebidas"
+      }
     },
     {
       "id": "CR04",
       "nombre": "Empanadas Queso-Camarón",
       "descripcion": "Empanadas de Queso-Camarón (vienen 3 unidades por 1 cantidad)",
       "precio": 4500,
-      "estado": true
+      "estado": true,
+      "categoria": {
+        "id": "C4",
+        "nombre": "Platos Deliciosos"
+      }
+    }
+  ],
+  "categoria": [
+    {
+      "id": "C1",
+      "nombre": "Comida Rápida"
+    },
+    {
+      "id": "C2",
+      "nombre": "Colaciones"
+    },
+    {
+      "id": "C3",
+      "nombre": "Bebidas"
+    },
+    {
+      "id": "C4",
+      "nombre": "Platos Deliciosos"
     }
   ],
   "registroVentas": [

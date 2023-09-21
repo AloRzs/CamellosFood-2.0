@@ -25,8 +25,11 @@ export class DetalleRegistroPage implements OnInit {
   }
   async getRegistroVenta(){
     this.restApi.getRegistroVentaId(this.route.snapshot.paramMap.get('id')!)
-    .subscribe({next:(res)=> {
-      console.log(res);
-      this.regis=res;}})
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.regis = res;
+        }
+      })
   }
 }

@@ -1,3 +1,5 @@
+import { Categoria } from "./Categoria";
+
 export class Producto{
 
     id:string;
@@ -5,7 +7,7 @@ export class Producto{
     descripcion:string;
     precio:number;
     estado:boolean;
-
+    categoria:string | null;
 
     constructor(obj:any){
         this.id=obj && obj.id || null
@@ -13,7 +15,7 @@ export class Producto{
         this.descripcion=obj && obj.descripcion || null;
         this.precio= obj && obj.precio || null;
         this.estado= obj && obj.estado || null;
-        
+        this.categoria= obj && obj.categoria || null;
     }
 //     "id": "CR04",
 //         "nombre": "Empanadas Queso-Camarón",

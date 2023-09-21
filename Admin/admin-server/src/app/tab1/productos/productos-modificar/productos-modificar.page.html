@@ -1,12 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-grid>
-      <ion-row>
-        <ion-col>
-            <ion-back-button defaultHref="/pedidos-registro" style="--color:white;"></ion-back-button>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size="1">
+            <ion-back-button defaultHref="/" style="--color:white;"></ion-back-button>
         </ion-col>
-        <ion-col size="8">
-          <ion-title style="color: white;font-family: BebasNeue;font-size: 30px;"><h1>Modificar Producto</h1></ion-title>
+        <ion-col>
+          <ion-title style="color: white;font-family: BebasNeue;font-size: 30px;">
+            <h1 style="text-align: center;">Modificar Producto</h1>
+          </ion-title>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -42,7 +44,13 @@
       </ion-grid> 
       <ion-buttons slot="center">
         <ion-button>Guardar</ion-button>
-        <ion-button>Cancelar</ion-button>
+        <ion-button type="button" shape="round" color="danger" expand="block"></ion-button>
+        <ion-button id="present-alert" color="danger">Eliminar</ion-button>
+          <ion-alert
+            trigger="present-alert"
+            header="¿Está seguro de que quiere eliminar este producto?"
+            [buttons]="alertButtons"
+          ></ion-alert>
       </ion-buttons>
     </ion-card-content>
   </ion-card>

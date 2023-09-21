@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header-container" id="toolBar" show="true"> 
+      <ion-text class="ion-no-padding">
+        <span class="title"></span>
+      </ion-text>
+      <ion-text>
+        <span class="subtitle"></span>
+      </ion-text>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <section  class="form-container"> 
+    <div class="login-form">
+      <div class="input-container">
+        <ion-label>RUT</ion-label>
+        <div class="input-shape">
+          <ion-input maxlength="12" id="rut"></ion-input>
+        </div>
+      </div>
+      <div class="input-container">
+        <ion-label>Contraseña</ion-label>
+        <div class="input-shape">
+          <ion-input maxlength="12" type="password"></ion-input>
+        </div>
+      </div>
+    </div>
+    <div class="submit-div">
+      <ion-button expand="block" shape="round" type="submit" [routerLink]="['/tabs/productos-registro/']">Ingresar</ion-button>
+      <a href="" style="color: #504CFF;">Olvidé mi contraseña</a>
+    </div>
+  </section>
+</ion-content>

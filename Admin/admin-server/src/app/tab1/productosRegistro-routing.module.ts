@@ -9,11 +9,23 @@ const routes: Routes = [
   },
   {
     path: 'productos-lista',
-    loadChildren: () => import('./productos-lista/productos-lista.module').then( m => m.ProductosListaPageModule)
+    loadChildren: () => import('./productos/productos-lista/productos-lista.module').then( m => m.ProductosListaPageModule)
   },
   {
     path: 'productos-lista/productos-modificar/:id',
-    loadChildren: () => import('./productos-modificar/productos-modificar.module').then( m => m.ProductosModificarPageModule)
+    loadChildren: () => import('./productos/productos-modificar/productos-modificar.module').then( m => m.ProductosModificarPageModule)
+  },
+  {
+    path: 'categorias-lista',
+    loadChildren: () => import('./categorias/categorias-lista/categorias-lista.module').then( m => m.CategoriasListarPageModule)
+  },
+  {
+    path: 'categorias-modificar',
+    loadChildren: () => import('./categorias/categorias-modificar/categorias-modificar.module').then( m => m.CategoriasModificarPageModule)
+  },
+  {
+    path: 'productos-agregar',
+    loadChildren: () => import('./productos/productos-agregar/productos-agregar.module').then( m => m.ProductosAgregarPageModule)
   }
 ];
 
