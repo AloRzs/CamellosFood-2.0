@@ -1,0 +1,28 @@
+.titulos_repa {
+    text-align: left;
+    font-size: 30px; /* Centrado papu */
+  }
+
+/* Fondo temporal de la vista principal */
+
+.background-image {
+  --background: url('../../assets/img/map_background2.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.mapa-container {
+  position: relative;
+  width: 100%;
+  height: 437px; /* Ajusta la altura según tus necesidades */
+  overflow: hidden;
+}
+
+.mapaGoogle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

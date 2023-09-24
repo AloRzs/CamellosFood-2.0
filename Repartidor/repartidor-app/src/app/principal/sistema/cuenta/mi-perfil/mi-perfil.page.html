@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="height: 75px; display: flex; align-items: center;">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">Mi perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">mi-perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-list *ngIf="cambiarContrasena">
+
+    <ion-item>
+      <ion-input label="Nombre" placeholder="NombreApellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="RUT" placeholder="99.999.999-9"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Escriba su contraseña actual"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Nueva contraseña" labelPlacement="floating" type="password" placeholder="Escriba una nueva contraseña"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="full" (click)="cambiarContrasena = !cambiarContrasena">
+    {{ cambiarContrasena ? 'Cancelar' : 'Cambiar Contraseña' }}
+  </ion-button>
+
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align:center; color:#BB0C0C" class="page-texts"  routerLink="/menu-repa"> Regresar </ion-title>
+  </ion-toolbar>
+</ion-footer>

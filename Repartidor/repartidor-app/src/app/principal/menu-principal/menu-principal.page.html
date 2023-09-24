@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="height: 75px; display: flex; align-items: center;">
+    <ion-buttons slot="start">
+          <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">CAMELLO’S Repartidor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">CAMELLO’S Repartidor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-button shape="round" color="danger" class="custom-button" style="margin-left: -50px;" routerLink="/form-iniciar">
+      <p>Iniciar sistema</p>
+    </ion-button>
+  </ion-fab>
+
+  <div class="col-md-6 mapa-container">
+    <div class="mapaGoogle">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.252895991478!2d-70.7082898235478!3d-33.59874217333117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d94f6eef1f51%3A0x48e82f1d2eb65ea9!2sDuoc%20UC%3A%20Sede%20San%20Bernardo!5e0!3m2!1ses!2scl!4v1695588036576!5m2!1ses!2scl" width="720" height="1280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align:center"><FONT COLOR="#0B7B2F">● En línea</FONT></ion-title>
+  </ion-toolbar>
+</ion-footer>
+

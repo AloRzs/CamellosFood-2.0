@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="height: 75px; display: flex; align-items: center;">
+    <ion-buttons slot="start">
+          <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">Menú repartidor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">menu_repa</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+
+  <ion-card routerLink="/lista-pedidos">
+    <ion-card-header>
+      <ion-card-title>Lista de pedidos <ion-icon name="fast-food"></ion-icon></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí se encontrarán todos los pedidos disponbiles hasta el momento, también se podrá
+      consultar los pedidos ya entregados.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/mi-perfil">
+    <ion-card-header>
+      <ion-card-title>Mi perfil <ion-icon name="person-circle"></ion-icon></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí puedes consultar información sobre tu perfil.
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align:center; color:#BB0C0C" class="page-texts"  routerLink="/menu-principal"> Regresar </ion-title>
+  </ion-toolbar>
+</ion-footer>

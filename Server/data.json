@@ -1,0 +1,172 @@
+{
+  "productos": [
+    {
+      "id": 3,
+      "titulo": "Producto 3",
+      "numeroOrden": "N° Orden 246813",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 4,
+      "titulo": "Producto 4",
+      "numeroOrden": "N° Orden 135792",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 5,
+      "titulo": "Producto 5",
+      "numeroOrden": "N° Orden 101112",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 6,
+      "titulo": "Producto 6",
+      "numeroOrden": "N° Orden 131415",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 7,
+      "titulo": "Producto 7",
+      "numeroOrden": "N° Orden 161718",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 8,
+      "titulo": "Producto 8",
+      "numeroOrden": "N° Orden 192021",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 9,
+      "titulo": "Producto 9",
+      "numeroOrden": "N° Orden 222324",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 10,
+      "titulo": "Producto 10",
+      "numeroOrden": "N° Orden 252627",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 11,
+      "titulo": "Producto 11",
+      "numeroOrden": "N° Orden 282930",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 12,
+      "titulo": "Producto 12",
+      "numeroOrden": "N° Orden 313233",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 13,
+      "titulo": "Producto 13",
+      "numeroOrden": "N° Orden 343536",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 14,
+      "titulo": "Producto 14",
+      "numeroOrden": "N° Orden 373839",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 15,
+      "titulo": "Producto 15",
+      "numeroOrden": "N° Orden 404142",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 16,
+      "titulo": "Producto 16",
+      "numeroOrden": "N° Orden 434445",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 17,
+      "titulo": "Producto 17",
+      "numeroOrden": "N° Orden 464748",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 18,
+      "titulo": "Producto 18",
+      "numeroOrden": "N° Orden 495051",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 19,
+      "titulo": "Producto 19",
+      "numeroOrden": "N° Orden 525354",
+      "estado": "disponible",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 20,
+      "titulo": "Producto 20",
+      "numeroOrden": "N° Orden 555657",
+      "estado": "completado",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 21,
+      "titulo": "Producto 21",
+      "numeroOrden": "N° Orden 552657",
+      "estado": "reparto",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 23,
+      "titulo": "Producto 23",
+      "numeroOrden": "N° Orden 596061",
+      "estado": "reparto",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 25,
+      "titulo": "Producto 25",
+      "numeroOrden": "N° Orden 626364",
+      "estado": "reparto",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 27,
+      "titulo": "Producto 27",
+      "numeroOrden": "N° Orden 656667",
+      "estado": "reparto",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    },
+    {
+      "id": 29,
+      "titulo": "Producto 29",
+      "numeroOrden": "N° Orden 686970",
+      "estado": "reparto",
+      "imagen": "https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "rut": "12345678-9",
+      "password": "prueba"
+    }
+  ]
+}
