@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-detalle-pedido',
@@ -7,25 +8,35 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detalle-pedido.page.scss'],
 })
 export class DetallePedidoPage implements OnInit {
-  pedido: any; // Declaración de la variable pedido
+  pedido: any;
+  pedidoId: string = "";
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
   ngOnInit() {
-    // Obtener el parámetro de la URL (pedidoId)
     this.route.params.subscribe(params => {
-      const pedidoId = params['pedidoId'];
+      this.pedidoId = params['id'];
+      console.log('Pedido ID:', this.pedidoId);
 
-      // Supongamos que tienes una función para obtener los detalles del pedido por su ID
-      // Puedes reemplazar esto con tu lógica real de obtención de datos
-      this.obtenerDetallesPedido(pedidoId);
+      this.obtenerDetallesPedido(this.pedidoId);
     });
   }
 
   obtenerDetallesPedido(pedidoId: string) {
-    // Aquí deberías obtener los detalles del pedido por su ID y asignarlos a la variable pedido
-    // Por ejemplo:
-    // this.pedido = this.servicioDePedidos.obtenerPedidoPorId(pedidoId);
-    
+    console.log('Obteniendo detalles del pedido con ID:', pedidoId);
+    // Utiliza el servicio ProductService para obtener los detalles del pedido por su ID
+    this.productService.getProducts().subscribe(
+      (productos: any) => {
+        // Supongamos que los productos se almacenan en un array y puedes buscar el pedido por su ID
+        this.pedido = productos.find((producto: any) => producto.id === pedidoId);
+        console.log('Detalles del pedido:', this.pedido);
+      },
+      (error) => {
+        console.error('Error al obtener detalles del pedido:', error);
+      }
+    );
   }
 }
+
+
+// import { ProductService } from 'src/app/services/product.service';

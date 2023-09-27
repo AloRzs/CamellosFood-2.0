@@ -17,22 +17,30 @@
   </ion-header>
 
 
-  <ion-list *ngIf="cambiarContrasena">
+  <div class="centered-container">
+    <img alt="" class="rounded-image" src="https://cdn1.iconfinder.com/data/icons/clothes-2/32/suit-512.png" />
+  </div>
+
+  <ion-list class="ion-text-center">
+    <ion-button color="primary">Cambiar imagen</ion-button>
+  </ion-list>
+
+  <ion-list >
 
     <ion-item>
-      <ion-input label="Nombre" placeholder="NombreApellido"></ion-input>
+      <ion-input label="Nombre" placeholder="Su Nombre y Apellido" disabled></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="RUT" placeholder="99.999.999-9"></ion-input>
+      <ion-input label="RUT" placeholder="99.999.999-9" disabled></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Escriba su contraseña actual"></ion-input>
+      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Escriba su contraseña actual" [disabled]="!cambiarContrasena"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Nueva contraseña" labelPlacement="floating" type="password" placeholder="Escriba una nueva contraseña"></ion-input>
+      <ion-input label="Nueva contraseña" labelPlacement="floating" type="password" placeholder="Escriba una nueva contraseña" [disabled]="!cambiarContrasena"></ion-input>
     </ion-item>
 
   </ion-list>
@@ -40,6 +48,15 @@
   <ion-button expand="full" (click)="cambiarContrasena = !cambiarContrasena">
     {{ cambiarContrasena ? 'Cancelar' : 'Cambiar Contraseña' }}
   </ion-button>
+
+  <ion-button expand="full" [disabled]="!cambiarContrasena" id="present-alert">Confirmar cambios</ion-button>
+
+  <ion-alert
+    trigger="present-alert"
+    header="Confirmar cambio de contraseña?"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
 
   
 </ion-content>

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="height: 75px; display: flex; align-items: center;">
+    <ion-buttons slot="start">
+          <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulos_repa" style="font-family: 'BebasNeue', sans-serif;">Historial de pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+<!-- Versión si no has realizado pedidos -->
+<div *ngIf="mostrarPedidos === 0"> 
+  <h2 style="text-align: center; padding-top: 20px;">¡Oh no! Parece que aún no tienes pedidos realizados ;(</h2>
+  <h3 style="text-align: center; color: blue;" routerLink="/lista-pedidos">Para realizar un pedido, presiona aquí</h3>
+</div>
+
+<!-- Versión si has realizado pedidos -->
+<div *ngIf="mostrarPedidos === 1">
+
+  <ion-list class="ion-text-center">
+    <ion-button (click)="mostrarTodosLosPedidos()" color="primary">Recargar pedidos</ion-button>
+  </ion-list>
+
+  <h1 style="text-align: center; padding-top: 20px; padding-bottom: 20px;">Pedidos realizados</h1>
+
+  <ion-card *ngFor="let pedido of pedidosMostrados">
+    <img alt="Silhouette of mountains" src="{{ pedido.imagen }}" />
+    <ion-card-header>
+      <ion-card-title>{{ pedido.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ pedido.numeroOrden }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</div>
+
+
+
+
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-toolbar>
+    <ion-title style="text-align:center; color:#BB0C0C" class="page-texts"  routerLink="/menu-repa"> Regresar </ion-title>
+  </ion-toolbar>
+
+</ion-footer>

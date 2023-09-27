@@ -39,9 +39,8 @@
           <ion-thumbnail slot="start">
             <img alt="Imagen del pedido" [src]="pedido.imagen" class="imagen-pedido" />
           </ion-thumbnail>
-          <ion-button color="primary">Detalles</ion-button>
+          <ion-button color="primary" [routerLink]="['/detalle-pedido', pedido.id]">Detalles</ion-button>
 
-          
         </ion-item>
       </ion-list>
     </ion-card-content>

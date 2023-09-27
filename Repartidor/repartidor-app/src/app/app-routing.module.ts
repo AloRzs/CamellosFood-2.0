@@ -43,8 +43,19 @@ const routes: Routes = [
     loadChildren: () => import('./principal/sistema/pedidos/lista-pedidos/lista-pedidos.module').then( m => m.ListaPedidosPageModule)
   },
   {
-    path: 'detalle-pedido/:pedidoId', component: DetallePedidoPage 
-  }, // Ruta para la página de detalle de pedido con un parámetro
+    path: 'detalle-pedido/:id', component: DetallePedidoPage },   {
+    path: 'historial-pedidos',
+    loadChildren: () => import('./principal/sistema/pedidos/historial-pedidos/historial-pedidos.module').then( m => m.HistorialPedidosPageModule)
+  },
+  {
+    path: 'mapa-pedidos',
+    loadChildren: () => import('./principal/sistema/pedidos/mapa-pedidos/mapa-pedidos.module').then( m => m.MapaPedidosPageModule)
+  },
+  {
+    path: 'terminar-pedido',
+    loadChildren: () => import('./principal/sistema/pedidos/terminar-pedido/terminar-pedido.module').then( m => m.TerminarPedidoPageModule)
+  },
+// Ruta para la página de detalle de pedido con un parámetro
   
 ];
 
