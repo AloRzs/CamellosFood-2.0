@@ -9,21 +9,121 @@
 
 <ion-content>
   
-  <ion-card *ngIf="pedido">
+<ion-card *ngFor="let pedido of pedidosMostrados">
 
      
-      <ion-card-header>
-        <ion-card-title>{{ pedido.titulo }}</ion-card-title>
-        <ion-card-subtitle>{{ pedido.numeroOrden }}</ion-card-subtitle>
-        <ion-card-subtitle>{{ pedido.estado }}</ion-card-subtitle>
-      </ion-card-header>
+  <ion-card-header>
+      <ion-card-title>{{ pedido.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ pedido.numeroOrden }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ pedido.estado }}</ion-card-subtitle>
+  </ion-card-header>
       
-      <ion-card-content>
+  <ion-card-content>
         
         <!-- Agrega aquí otros detalles del pedido, como imagen, descripción, etc. -->
-      </ion-card-content>
+  </ion-card-content>
 
-  </ion-card>
+</ion-card>
+
+
+<ion-card *ngIf="TipoDetalle === 0">
+
+     
+    <ion-card-header>
+
+      <ion-card-title style="color: green;">N° Orden 1234</ion-card-title>
+
+    </ion-card-header>
+    
+    <ion-card-content>
+
+      <img alt="Imagen del pedido" style="width: 25%; height: 25%" src="https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg" class="imagen-pedido" />
+      
+      <ion-card-title>Estado:</ion-card-title>
+      <ion-card-subtitle style="color: green;">Disponible </ion-card-subtitle>
+      <ion-card-title>Dirección de entrega:</ion-card-title>
+      <ion-card-subtitle>Freire 862, 8071189 San Bernardo </ion-card-subtitle>
+      <ion-card-title>Nombre cliente:</ion-card-title>
+      <ion-card-subtitle>Marcos Reyes </ion-card-subtitle>
+      <ion-card-title>Teléfono del cliente:</ion-card-title>
+      <ion-card-subtitle>+56950369308 </ion-card-subtitle>
+      <ion-card-title>Información adicional:</ion-card-title>
+      <ion-card-subtitle>Hamburguesas sin pepinillos </ion-card-subtitle>
+
+      <ion-list class="ion-text-center">
+        <ion-button color="primary" routerLink="/mapa-pedidos" >Aceptar pedido</ion-button>
+      </ion-list>
+
+    </ion-card-content>
+
+</ion-card>
+
+<ion-card *ngIf="TipoDetalle === 1" disabled>
+
+     
+    <ion-card-header>
+
+      <ion-card-title style="color: blue;">N° Orden 1235</ion-card-title>
+
+    </ion-card-header>
+    
+    <ion-card-content>
+
+      <img alt="Imagen del pedido" style="width: 25%; height: 25%" src="https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg" class="imagen-pedido" />
+      
+      <ion-card-title>Estado:</ion-card-title>
+      <ion-card-subtitle style="color: blue;">En reparto </ion-card-subtitle>
+      <ion-card-title>Dirección de entrega:</ion-card-title>
+      <ion-card-subtitle>Dirección 2 </ion-card-subtitle>
+      <ion-card-title>Nombre cliente:</ion-card-title>
+      <ion-card-subtitle>Alo Sans Gaming </ion-card-subtitle>
+      <ion-card-title>Teléfono del cliente:</ion-card-title>
+      <ion-card-subtitle>+56912345678 </ion-card-subtitle>
+      <ion-card-title>Información adicional:</ion-card-title>
+      <ion-card-subtitle>Hamburguesas con hamburguesas XD</ion-card-subtitle>
+
+      <ion-list class="ion-text-center">
+        <ion-button color="primary">No disponible</ion-button>
+      </ion-list>
+
+    </ion-card-content>
+
+</ion-card>
+
+<ion-card *ngIf="TipoDetalle === 2" disabled>
+
+     
+    <ion-card-header>
+
+      <ion-card-title style="color: red;">N° Orden 5646</ion-card-title>
+
+    </ion-card-header>
+    
+    <ion-card-content>
+
+      <img alt="Imagen del pedido" style="width: 25%; height: 25%" src="https://static.vecteezy.com/system/resources/previews/000/964/198/non_2x/fast-food-meal-set-vector.jpg" class="imagen-pedido" />
+      
+      <ion-card-title>Estado:</ion-card-title>
+      <ion-card-subtitle style="color: red;">Completado </ion-card-subtitle>
+      <ion-card-title>Dirección de entrega:</ion-card-title>
+      <ion-card-subtitle>Freire 862, 8071189 San Bernardo </ion-card-subtitle>
+      <ion-card-title>Nombre cliente:</ion-card-title>
+      <ion-card-subtitle>Fernando Canvas </ion-card-subtitle>
+      <ion-card-title>Teléfono del cliente:</ion-card-title>
+      <ion-card-subtitle>+5699999999 </ion-card-subtitle>
+      <ion-card-title>Información adicional:</ion-card-title>
+      <ion-card-subtitle>Nada </ion-card-subtitle>
+
+      <ion-list class="ion-text-center">
+        <ion-button color="primary">Pedido Completado</ion-button>
+      </ion-list>
+
+    </ion-card-content>
+
+</ion-card>
+
+
+  
 
   
 </ion-content>

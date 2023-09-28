@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-pedido',
@@ -11,8 +12,15 @@ export class DetallePedidoPage implements OnInit {
   pedido: any;
   pedidoId: string = "";
 
+  pedidos: any[] = [];
+
+  pedidosMostrados = [...this.pedidos]; // Inicialmente, muestra todos los pedidos
+
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
+  TipoDetalle: number = 0; // temporalmente, esta mostrará los  detalles 
+
+  
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.pedidoId = params['id'];
