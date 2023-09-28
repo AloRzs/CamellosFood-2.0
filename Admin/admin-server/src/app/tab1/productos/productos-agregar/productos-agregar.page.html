@@ -37,13 +37,15 @@
     <ion-item>
       <ion-label position="floating">Categoria</ion-label><!-- esto tiene que ser un cbobox -->
         <ion-item>
-        <ion-select label="Categoria" [(ngModel)]="productoInstancia.categoria" placeholder="-------" formControlName="prod_categoria">
+        <ion-select label="Categoria" [(ngModel)]="productoInstancia.categoria" 
+                    placeholder="SELECCIONE CATEGORIA" formControlName="prod_categoria"
+                    (ngModelChange)="productoInstancia.categoria = $event">
           <ion-select-option *ngFor="let categoria of lsCategorias;" [value]="categoria" >{{categoria.nombre}}</ion-select-option>
         </ion-select>
       </ion-item>
-      
+      <br>
     </ion-item>
     <ion-button type="submit" shape="round" color="primary" expand="block"
-      [disabled]="!productForm.valid">Submit</ion-button>
+      [disabled]="!productForm.valid || !productoInstancia.categoria.id" style="font-family: BebasNeue;font-size: 30px;">Agregar Producto</ion-button>
   </form>
 </ion-content>

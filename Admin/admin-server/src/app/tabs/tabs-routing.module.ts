@@ -14,6 +14,10 @@ const routes: Routes = [
       {
         path: 'pedidos-registro',
         loadChildren: () => import('../pedidosRegistro/pedidosRegistro.module').then(m => m.PedidosRegistroPageModule)
+      },
+      {
+        path: 'personal-list',
+        loadChildren: () => import('../tab2/personal-list.module').then(m => m.PersonalListPageModule)
       }
     ]
   },

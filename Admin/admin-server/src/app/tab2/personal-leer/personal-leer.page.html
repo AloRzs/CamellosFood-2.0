@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="1">
+          <ion-back-button defaultHref="tab2/personal-list/" style="--color:white;"></ion-back-button>
+      </ion-col>
+      <ion-col>
+        <ion-title style="color: white;font-family: BebasNeue;font-size: 30px;">
+          <h1 style="text-align: center;">Datos del personal seleccionado</h1>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>Rut:</ion-label>
+            <ion-textarea readonly="true"value="{{personal.rut}}"></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>Nombres:</ion-label>
+            <ion-textarea readonly="true" value="{{personal.nombres}}"></ion-textarea>
+          </ion-col>
+          <ion-col>
+            <ion-label>Apellidos:</ion-label>
+            <ion-textarea readonly="true" value="{{personal.apellidos}}"></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>Cargo:</ion-label>
+            <ion-text readonly="true">{{personal.cargo.nombre_cargo}}</ion-text>
+          </ion-col>
+        </ion-row>      
+      </ion-grid> 
+      <ion-buttons slot="center">
+        <ion-button>Modificar</ion-button>
+        <ion-button type="button" shape="round" color="danger" expand="block">Eliminar</ion-button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- {
+  "rut": "18.934.756-2",
+  "nombres": "Jane",
+  "apellidos": "Smith",
+  "sucursal": "La Pintana 1984",
+  "cargo":{
+    "id":4,
+    "nombre_cargo":"Mánager"
+  }
+}, -->

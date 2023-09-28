@@ -1,4 +1,120 @@
 {
+  "personal": [
+    {
+      "rut": "12.872.871-8",
+      "nombres": "John",
+      "apellidos": "Doe",
+      "sucursal": "San Bernardo 1823",
+      "cargo": {
+        "id": 6,
+        "nombre_cargo": "Repartidor"
+      }
+    },
+    {
+      "rut": "18.934.756-2",
+      "nombres": "Jane",
+      "apellidos": "Smith",
+      "sucursal": "La Pintana 1984",
+      "cargo": {
+        "id": 4,
+        "nombre_cargo": "Mánager"
+      }
+    },
+    {
+      "rut": "19.567.432-7",
+      "nombres": "Michael",
+      "apellidos": "Johnson",
+      "sucursal": "Peñaflor 7621",
+      "cargo": {
+        "id": 2,
+        "nombre_cargo": "Administrador"
+      }
+    },
+    {
+      "rut": "13.245.678-1",
+      "nombres": "Emily",
+      "apellidos": "Davis",
+      "sucursal": "San Bernardo 1823",
+      "cargo": {
+        "id": 6,
+        "nombre_cargo": "Repartidor"
+      }
+    },
+    {
+      "rut": "17.890.123-5",
+      "nombres": "David",
+      "apellidos": "Brown",
+      "sucursal": "La Pintana 1984",
+      "cargo": {
+        "id": 4,
+        "nombre_cargo": "Mánager"
+      }
+    },
+    {
+      "rut": "16.543.210-4",
+      "nombres": "Sophia",
+      "apellidos": "Miller",
+      "sucursal": "Peñaflor 7621",
+      "cargo": {
+        "id": 2,
+        "nombre_cargo": "Administrador"
+      }
+    },
+    {
+      "rut": "14.678.901-3",
+      "nombres": "Daniel",
+      "apellidos": "Wilson",
+      "sucursal": "San Bernardo 1823",
+      "cargo": {
+        "id": 6,
+        "nombre_cargo": "Repartidor"
+      }
+    },
+    {
+      "rut": "15.432.109-8",
+      "nombres": "Olivia",
+      "apellidos": "Taylor",
+      "sucursal": "La Pintana 1984",
+      "cargo": {
+        "id": 4,
+        "nombre_cargo": "Mánager"
+      }
+    },
+    {
+      "rut": "11.234.567-0",
+      "nombres": "James",
+      "apellidos": "Anderson",
+      "sucursal": "Peñaflor 7621",
+      "cargo": {
+        "id": 2,
+        "nombre_cargo": "Administrador"
+      }
+    },
+    {
+      "rut": "10.987.654-3",
+      "nombres": "Isabella",
+      "apellidos": "Moore",
+      "sucursal": "San Bernardo 1823",
+      "cargo": {
+        "id": 6,
+        "nombre_cargo": "Repartidor"
+      }
+    }
+  ],
+  "cargo": [
+    {
+      "id": 2,
+      "nombre_cargo": "Administrador"
+    },
+    {
+      "id": 4,
+      "nombre_cargo": "Mánager"
+    },
+    {
+      "id": 6,
+      "nombre_cargo": "Repartidor"
+    }
+  ],
   "productos": [
     {
       "id": "CR01",

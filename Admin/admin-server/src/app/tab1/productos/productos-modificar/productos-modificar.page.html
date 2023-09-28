@@ -45,12 +45,7 @@
       <ion-buttons slot="center">
         <ion-button>Guardar</ion-button>
         <ion-button type="button" shape="round" color="danger" expand="block"></ion-button>
-        <ion-button id="present-alert" color="danger">Eliminar</ion-button>
-          <ion-alert
-            trigger="present-alert"
-            header="¿Está seguro de que quiere eliminar este producto?"
-            [buttons]="alertButtons"
-          ></ion-alert>
+        <ion-button id="present-alert" color="danger" (click)="confirmarEliminacion(regis.id)">Eliminar</ion-button>
       </ion-buttons>
     </ion-card-content>
   </ion-card>

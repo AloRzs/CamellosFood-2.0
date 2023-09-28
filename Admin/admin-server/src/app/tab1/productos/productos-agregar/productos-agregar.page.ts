@@ -22,49 +22,59 @@ export class ProductosAgregarPage implements OnInit {
     descripcion: "",
     precio: 0,
     estado: false,
-    categoria: null
+    categoria: new Categoria()
   }
 
   constructor(private formBuilder:FormBuilder,
     private servicioApi:ProductosService,
     private router:Router,
-    private servicioApiCtg:CategoriasService) { }
+    private servicioApiCtg:CategoriasService,
+    private servicioApiProd:ProductosService) { }
 
   ngOnInit() {
     this.productForm = this.formBuilder.group({
-      "prod_nombre" : [null, Validators.required],//campos requeridos aa
+      'prod_nombre' : [null, Validators.required],//campos requeridos aa
       'prod_desc' : [null, Validators.required],
       'prod_precio' : [null, Validators.required],
-      'prod_categoria' : [null, Validators.required]
+      'prod_categoria' : [null, Validators.required],
     });
 
     this.obtenerListaCategorias();
   }
 
-
+  productos:Producto[]=[];
   async obtenerListaCategorias() {
     //los next nos sirve para pasar valores nada mas 
     this.servicioApiCtg.getCategorias().subscribe({ next:(respuesta) => this.lsCategorias=respuesta})
+  }
+
+  cargarProductos(){
+
+    this.servicioApiProd.getProductos().subscribe((data) => {this.productos=data})
   }
 
   async onFormSubmit(form:NgForm) {
     console.log("onFormSubmit del Product ADD")
     if (this.productoInstancia.categoria === null) {
       // No es necesario hacer ninguna modificación, ya está en null
+      console.log("no se agrego por la categoria")
+      return
     }
     await this.servicioApi.postProducto(this.productoInstancia)
       .subscribe({
-        next: (res) => {
-          console.log("Next AddProduct Page",res) //Elimina la espera
-          if (res== null){ // No viene respuesta del registro
-            console.log("Next No Agrego, Ress Null ");
+        next: (res) => { 
+          if (res == null){ // No viene respuesta del registro
+            console.log("No se agregó ");
             return
           }
           // Si viene respuesta
           console.log("Se agregó;",this.router);
-          this.router.navigate(['productos-registro/productos-lista/']);
+          this.cargarProductos();
+          this.router.navigate(['tabs/productos-registro/productos-lista/']);
+
         }
       });
+      
   }
   
 

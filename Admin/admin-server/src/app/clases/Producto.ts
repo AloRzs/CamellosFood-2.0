@@ -7,7 +7,7 @@ export class Producto{
     descripcion:string;
     precio:number;
     estado:boolean;
-    categoria:string | null;
+    categoria:Categoria;
 
     constructor(obj:any){
         this.id=obj && obj.id || null
@@ -21,4 +21,6 @@ export class Producto{
 //         "nombre": "Empanadas Queso-Camarón",
 //         "descripcion": "Empanadas de Queso-Camarón (vienen 3 unidades por 1 cantidad)",
 //         "precio": 4500
+//          "estado":true
+//          "categoria":{"id":"C01","descripcion":"Platos deliciosos"}
 }

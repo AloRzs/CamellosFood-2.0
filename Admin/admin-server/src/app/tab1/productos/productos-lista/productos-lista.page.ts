@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/servicios/productos.service';
 import { Producto } from 'src/app/clases/Producto';
+import { LoadingController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { AlertController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-productos-lista',
@@ -8,14 +13,31 @@ import { Producto } from 'src/app/clases/Producto';
   styleUrls: ['./productos-lista.page.scss'],
 })
 export class ProductosListaPage implements OnInit {
-  productos:any[]=[];
-  constructor(private productosServicio:ProductosService) { }
+  productos:Producto[]=[];
 
-  ngOnInit() {
-    this.productosServicio.getProductos()
-    .subscribe(res => this.productos = res);
+  constructor(private productosServicio:ProductosService, private loadingController:LoadingController
+    ,private alertController:AlertController,private router:Router ) { 
+    
   }
 
+  ngOnInit() {
+    this.obtenerProductos();
+  }
+
+  
+  async obtenerProductos(){
+    const loading = await this.loadingController.create({message:"Cargando Productos..."});
+    await loading.present();
+    await this.productosServicio.getProductos().subscribe({next:(respuesta) => {
+      this.productos=respuesta;
+      loading.dismiss();},
+    complete:()=> {},
+    error: (err) => {
+      // Si da error, imprimo en consola.
+              console.log("Err:" + err);
+              loading.dismiss();
+            }})
+  }
 
   deshabilitarProducto(productoId: string,producto:any) {
     // Llamada al servicio para cambiar el estado

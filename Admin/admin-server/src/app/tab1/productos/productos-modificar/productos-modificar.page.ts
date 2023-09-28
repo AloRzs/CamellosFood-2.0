@@ -18,7 +18,7 @@ export class ProductosModificarPage implements OnInit {
     descripcion: 'alo',
     precio: 4000,
     estado: true,
-    categoria:""
+    categoria:{id:"1",nombre:"alo"}
   };
   constructor(public restApi: ProductosService, 
     public route: ActivatedRoute,
@@ -30,6 +30,41 @@ export class ProductosModificarPage implements OnInit {
     this.getProductoId();
 
   }
+  async confirmarEliminacion(id:string) {
+    const alert = await this.alertController.create({
+      header: 'Confirmar Eliminación',
+      message: '¿Estás seguro de que quieres eliminar este producto?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Eliminación cancelada');
+          }
+        },
+        {
+          text: 'Eliminar',
+          handler: () => {
+            // Llama al servicio para eliminar el producto
+            this.restApi.delProducto(id).subscribe(
+              () => {
+                console.log('Producto eliminado');
+                this.router.navigate(['tabs/productos-registro/productos-lista/']);
+                // Puedes realizar cualquier otra acción después de eliminar
+              },
+              (error) => {
+                console.error('Error al eliminar el producto', error);
+                // Maneja el error si es necesario
+              }
+            );
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   async getProductoId() {
     this.restApi
       .getProducto(this.route.snapshot.paramMap.get('id')!)
@@ -41,23 +76,7 @@ export class ProductosModificarPage implements OnInit {
       });
   }
 
-  public alertButtons = [
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      handler: () => {
-        console.log('Alert canceled');
-      },
-    },
-    {
-      text: 'OK',
-      role: 'confirm',
-      handler: () => {
-        console.log('Alert confirmed');
-      },
-    },
-  ];
-
+  
 
   // getProducto(id: String): Observable<Producto> {
   //   console.log("Esto para obtener la id:" + id + "el diaulo");
