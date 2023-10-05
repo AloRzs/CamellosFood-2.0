@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size="1">
+            <ion-back-button defaultHref="/" style="--color:white;"></ion-back-button>
+        </ion-col>
+        <ion-col>
+          <ion-title style="color: white;font-family: BebasNeue;font-size: 30px;">
+            <h1 style="text-align: center;">Leer Producto</h1>
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="font-family: BebasNeue; font-size: 35px;">ID: {{regis.id}}</ion-card-title>
+    </ion-card-header>
+    <!-- Contenido de la card -->
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>Nombre del Plato:</ion-label>
+            <ion-textarea value="{{regis.nombre}}" readonly="true"></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>Descripcion:</ion-label>
+            <ion-textarea value="{{regis.descripcion}}" readonly="true"></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>Precio:</ion-label>
+            <ion-textarea disabled="true">{{regis.precio}}</ion-textarea>
+          </ion-col>
+        </ion-row>      
+      </ion-grid> 
+      <ion-buttons slot="center">
+        <ion-button [routerLink]="['../../../productos-modificar/',regis.id]">Modificar</ion-button>
+        <ion-button type="button" shape="round" color="danger" expand="block"></ion-button>
+        <ion-button id="present-alert" color="danger" (click)="confirmarEliminacion(regis.id)">Eliminar</ion-button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

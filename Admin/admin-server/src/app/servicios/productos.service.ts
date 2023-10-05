@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { Producto } from '../clases/Producto';
 
 
@@ -36,6 +35,7 @@ export class ProductosService {
   }
   putProducto(id:number,producto:Producto):Observable<Producto>{
     //para actualizar se le pasa la id del producto y ademas se le pasa el producto de por si
+    console.log("ID PROD:",id,producto)
     return this.servicioHttp.put<Producto>(this.apiUrlProd + "/" + id,producto)
   }
 

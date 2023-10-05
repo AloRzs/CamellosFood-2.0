@@ -15,6 +15,9 @@ export class CategoriasListaPage implements OnInit {
   ngOnInit() {
     this.obtenerListaCategorias();
   }
+  ionViewWillEnter(){
+    this.obtenerListaCategorias();
+  }
 
   async obtenerListaCategorias() {
     //los next nos sirve para pasar valores nada mas 

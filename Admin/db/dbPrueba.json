@@ -159,6 +159,28 @@
         "id": "C4",
         "nombre": "Platos Deliciosos"
       }
+    },
+    {
+      "id": "HMZi6II",
+      "nombre": "¿Me salio?",
+      "descripcion": "De platos a Bebidas",
+      "precio": 1000,
+      "estado": true,
+      "categoria": {
+        "id": "C3",
+        "nombre": "Bebidas"
+      }
+    },
+    {
+      "id": "xHfmNki",
+      "nombre": "Cazulea",
+      "descripcion": "sopa",
+      "precio": 1000,
+      "estado": true,
+      "categoria": {
+        "id": "C4",
+        "nombre": "Platos Deliciosos"
+      }
     }
   ],
   "categoria": [

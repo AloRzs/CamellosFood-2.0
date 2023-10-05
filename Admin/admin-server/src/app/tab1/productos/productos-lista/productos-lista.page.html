@@ -23,7 +23,7 @@
             <ion-text># {{producto.id}}</ion-text>
           </div>
           <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text><br>
-          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.categoria.nombre}}</ion-text>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.categoria}}</ion-text>
           <!-- con el código de abajo recupero algo específico de una sublista (no la entiendo muy bien) -->
           <!-- <ion-text style="font-family: BebasNeue;font-size: 25px;">{{producto.categoria[0]?.nombre}}</ion-text> -->
         </ion-card-title>
@@ -34,7 +34,7 @@
         </div>
         <ion-buttons class="ion-justify-content-around">
           <ion-button class="botones-productos-crud" (click)="deshabilitarProducto(producto.id,producto)">Deshabilitar</ion-button>
-          <ion-button class="botones-productos-crud" [routerLink]="['productos-modificar/',producto.id]">Modificar</ion-button>
+          <ion-button class="botones-productos-crud" [routerLink]="['productos-leer/',producto.id]">Leer</ion-button>
         </ion-buttons>
       </ion-card-content>
     </div>
@@ -45,7 +45,7 @@
             <ion-text># {{producto.id}}</ion-text>
           </div>
           <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.nombre}}</ion-text><br>
-          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.categoria.nombre}}</ion-text>
+          <ion-text style="font-family: BebasNeue;font-size: 35px;">{{producto.categoria}}</ion-text>
           <!-- <ion-text style="font-family: BebasNeue;font-size: 25px;">{{producto.categoria[0]?.nombre}}</ion-text> -->
         </ion-card-title>
       </ion-card-header>
@@ -55,7 +55,7 @@
         </div>
         <ion-buttons class="ion-justify-content-around">
           <ion-button class="botones-productos-crud" (click)="habilitarProducto(producto.id,producto)">Habilitar</ion-button>
-          <ion-button class="botones-productos-crud" disabled>Modificar</ion-button>
+          <ion-button class="botones-productos-crud" disabled>Leer</ion-button>
         </ion-buttons>
       </ion-card-content>
     </div>

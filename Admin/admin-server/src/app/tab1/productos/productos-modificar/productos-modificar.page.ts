@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductosService } from 'src/app/servicios/productos.service';
-import { ActivatedRoute } from '@angular/router';
-import { Producto } from 'src/app/clases/Producto';
-import { AlertController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Producto } from 'src/app/clases/Producto';
+import { ProductosService } from 'src/app/servicios/productos.service';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { CategoriasService } from 'src/app/servicios/categorias.service';
+import { Categoria } from 'src/app/clases/Categoria';
 
 @Component({
   selector: 'app-productos-modificar',
@@ -12,7 +13,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./productos-modificar.page.scss'],
 })
 export class ProductosModificarPage implements OnInit {
-  regis: Producto = {
+
+  lsCategorias:Categoria[]=[];
+  productForm!:FormGroup
+  producto: Producto = {
     id: '018',
     nombre: 'Carlos Jara',
     descripcion: 'alo',
@@ -20,66 +24,73 @@ export class ProductosModificarPage implements OnInit {
     estado: true,
     categoria:{id:"1",nombre:"alo"}
   };
-  constructor(public restApi: ProductosService, 
-    public route: ActivatedRoute,
-    public loadingController: LoadingController,
-    public router: Router,
-    public alertController:AlertController) {}
+  id:any= '';
+  constructor(private loadingController:LoadingController,
+    private restApi:ProductosService,
+    private formBuilder:FormBuilder,
+    private router:Router,
+    private route:ActivatedRoute,
+    private servicioApiCtg:CategoriasService,
+    ) {}
 
   ngOnInit() {
-    this.getProductoId();
+    this.obtenerListaCategorias();
+    this.getProduct(this.route.snapshot.params['id']);
+    this.productForm = this.formBuilder.group({
+      'prod_nombre' : [null, Validators.required],//campos requeridos aa
+      'prod_desc' : [null, Validators.required],
+      'prod_precio' : [null, Validators.required],
+      'prod_categoria' : [null, Validators.required],
+    });  
+  }
+  async obtenerListaCategorias() {
+    //los next nos sirve para pasar valores nada mas 
+    // this.servicioApiCtg.getCategorias().subscribe({ next:(respuesta) => {this.lsCategorias=respuesta;this.getProduct(this.route.snapshot.params['id']); }})
+    this.servicioApiCtg.getCategorias().subscribe({ next:(respuesta) => this.lsCategorias=respuesta})
 
   }
-  async confirmarEliminacion(id:string) {
-    const alert = await this.alertController.create({
-      header: 'Confirmar Eliminación',
-      message: '¿Estás seguro de que quieres eliminar este producto?',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          handler: () => {
-            console.log('Eliminación cancelada');
-          }
-        },
-        {
-          text: 'Eliminar',
-          handler: () => {
-            // Llama al servicio para eliminar el producto
-            this.restApi.delProducto(id).subscribe(
-              () => {
-                console.log('Producto eliminado');
-                this.router.navigate(['tabs/productos-registro/productos-lista/']);
-                // Puedes realizar cualquier otra acción después de eliminar
-              },
-              (error) => {
-                console.error('Error al eliminar el producto', error);
-                // Maneja el error si es necesario
-              }
-            );
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-  }
-
-  async getProductoId() {
-    this.restApi
-      .getProducto(this.route.snapshot.paramMap.get('id')!)
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-          this.regis = res;
-        },
+  async getProduct(id: string) {
+    // Crea Wait
+      const loading = await this.loadingController.create({
+        message: 'Cargando Producto, espere...'
       });
-  }
-
+      // Muestra Wait
+      await loading.present();
+      // Obtiene el Observable
+      await this.restApi.getProducto(id + "")
+        .subscribe({
+          next: (data:Producto) => {
+            // Si funciona Rescata el los datos
+            this.id = data.id;
+            this.producto.nombre = data.nombre;
+            this.producto.descripcion = data.descripcion;
+            this.producto.precio = data.precio;
+            this.producto.categoria = data.categoria;
+            console.log("getProductID data****",this.lsCategorias);
+            console.log(data,"ALO");
+            loading.dismiss();
+          }
+          , complete: () => { }
+          , error: (err) => {
+            console.log("Error producto: ");
+            console.log(err);
+            loading.dismiss();
+          }
+        })
+    }
+    async onFormSubmit(form: NgForm) {
+      console.log("onFormSubmit ID:" + this.id)
+      this.producto.id = this.id;
+      this.producto.categoria = this.id;
+      await this.restApi.putProducto(this.id, this.producto)
+        .subscribe({
+          next: (res) => {
+            let id = res['id'];
+            this.router.navigate(['tabs/productos-registro/productos-lista/']);
+          }
+          , complete: () => { }
+          , error: (err) => { console.log(err); }
+        })
   
-
-  // getProducto(id: String): Observable<Producto> {
-  //   console.log("Esto para obtener la id:" + id + "el diaulo");
-  //   return this.servicioHttp.get<Producto>(this.apiUrlProd + "/" + id)
-  // }
+    }
 }

@@ -3,7 +3,7 @@
     <ion-grid>
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col size="1">
-            <ion-back-button defaultHref="/" style="--color:white;"></ion-back-button>
+            <ion-back-button defaultHref="/pedidos-registro" style="--color:white;"></ion-back-button>
         </ion-col>
         <ion-col>
           <ion-title style="color: white;font-family: BebasNeue;font-size: 30px;">
@@ -16,38 +16,35 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title style="font-family: BebasNeue; font-size: 35px;">ID: {{regis.id}}</ion-card-title>
-    </ion-card-header>
-    <!-- Contenido de la card -->
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-label>Nombre del Plato:</ion-label>
-            <ion-textarea value="{{regis.nombre}}"></ion-textarea>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-label>Descripcion:</ion-label>
-            <ion-textarea value="{{regis.descripcion}}"></ion-textarea>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-label>Precio:</ion-label>
-            <ion-textarea disabled="true">{{regis.precio}}</ion-textarea>
-          </ion-col>
-        </ion-row>      
-      </ion-grid> 
-      <ion-buttons slot="center">
-        <ion-button>Guardar</ion-button>
-        <ion-button type="button" shape="round" color="danger" expand="block"></ion-button>
-        <ion-button id="present-alert" color="danger" (click)="confirmarEliminacion(regis.id)">Eliminar</ion-button>
-      </ion-buttons>
-    </ion-card-content>
-  </ion-card>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">MODIFICAR PRODUCTO</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="producto.nombre" formControlName="prod_nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="producto.precio" formControlName="prod_precio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="producto.descripcion" formControlName="prod_desc"></ion-textarea>
+    </ion-item>
+      <ion-item>
+      <ion-select label="Categoria" labelPlacement="floating" [(ngModel)]="producto.categoria" 
+                  placeholder="SELECCIONE CATEGORIA" formControlName="prod_categoria">
+        <ion-select-option *ngFor="let categoria of lsCategorias;" [value]="categoria.id">
+          {{categoria.id}}
+          {{categoria.nombre}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-button type="submit" shape="round" color="primary" expand="block"
+      [disabled]="!productForm.valid || !producto.categoria" style="font-family: BebasNeue;font-size: 30px;">Guardar</ion-button>
+  </form>
 </ion-content>
-

@@ -23,6 +23,10 @@ export class ProductosListaPage implements OnInit {
   ngOnInit() {
     this.obtenerProductos();
   }
+  ionViewWillEnter(){
+    this.obtenerProductos();
+
+  }
 
   
   async obtenerProductos(){
